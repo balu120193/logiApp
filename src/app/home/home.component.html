@@ -1,0 +1,53 @@
+
+<app-header></app-header>
+<div class="col-md-12">
+   
+   
+     <h4>Hi {{currentUser.firstName}}!</h4>
+      <div class="row" >
+<table class="table">
+    <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Code</th>
+        <th>Employee Password</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let s of employee">
+      <tr >
+        <td>{{ s.employee_id }}</td>
+        <td>{{ s.employee_name }}</td>
+        <td>{{ s.employee_code }}</td>
+        <td>{{ s.employee_password }}</td>
+      </tr>
+    </tbody>
+</table>
+<br/>         
+<hr>  
+<br/>
+
+<button type="button" class="btn" (click)="button()">Users</button>
+  <table *ngIf="display" class="table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr >
+        <td>{{user.username}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td> <a style="cursor: pointer;" (click)="deleteUser(user.id)">Delete</a> </td>
+      </tr>
+    </tbody>
+</table>
+
+
+   
+</div>
+
